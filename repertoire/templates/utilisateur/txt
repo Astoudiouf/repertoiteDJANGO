@@ -27,13 +27,12 @@
             <input
               type="text"
               class="form-control"
-              id="password"
-              name="password"
+              id="form.password"
+              name="form.password"
               required
-              {{
-                form.password
-                }}
-            />
+              {{ form.password }}/>
+           
+            
           </div>
           <br />
           <button type="submit" class="btn btn-primary btn-block">

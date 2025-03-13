@@ -6,8 +6,61 @@
     <form method="POST"> 
       {% csrf_token %}  
       <div class="form-group">
-        {{ form.as_p }} 
+        {{ form.username.label_tag }}
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          required
+          {{
+          form.username
+          }}
+        />
       </div>
+      <br />
+      <div class="form-group">
+        {{ form.email.label_tag }}
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+          {{
+            form.email
+            }}
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        {{ form.password1.label_tag }}
+        <input
+          type="text"
+          class="form-control"
+          id="password1"
+          name="password1"
+          required
+          {{
+            form.password1
+            }}
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        {{ form.password2.label_tag }}
+        <input
+          type="text"
+          class="form-control"
+          id="password2"
+          name="password2"
+          required
+          {{
+            form.password2
+            }}
+        />
+      </div>
+      <br />
       <button type="submit" class="btn btn-primary">Inscription</button>
     </form>
     <p class="mt-2">

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Bienvenue dans votre list de contact</h2>
+<div class="col-md-6 m-auto">
+  <h4 class="text-center"> {{ contacts.prenom }}    {{ contacts.nom }} </h4>
+<div class="card card-body">
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    Telephone: {{ contacts.telephone }}
+  </li>
+  <li class="list-group-item">
+    Email: {{ contacts.email| default_if_none:"non renseigne"}}
+  </li>
+  <li class="list-group-item">
+    date_enregistrement: {{ contacts.date_enregistrement }}
+  </li>
+</ul>
+<div class="mt-2">
+  <a href="{% url 'edit_contact' contacts.id %}" class="btn btn-primary">Modifier</a>
+  <a href="{% url 'delete_contact' contacts.id %}" class="btn btn-danger">Delete</a>
+</div>
+</div>
+</div>
+
+{% endblock  %}
